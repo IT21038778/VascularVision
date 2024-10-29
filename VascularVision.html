@@ -1,0 +1,927 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vascular Vision - Enhanced Cardiovascular Learning</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: white !important; /* Make navbar white */
+        }
+
+        .nav-link {
+            color: black; /* Set link color to black for visibility */
+        }
+
+        .nav-link:hover {
+            color: #5ce1e6; /* Change color on hover for better UX */
+        }
+
+        .dropdown-menu {
+            background-color: white; /* Set dropdown menu background to white */
+        }
+
+        .dropdown-item {
+            color: #000; /* Set dropdown item color */
+        }
+
+        .dropdown-item:hover {
+            background-color: #5ce1e6; /* Change background on hover for dropdown items */
+        }
+        /* Hero Section */
+        #hero {
+            background: url('img/newmain2.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section Text Styles */
+        #hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            animation: fadeInDown 2s ease-in-out forwards, glow 1.5s infinite alternate;
+            text-shadow: 0 0 10px rgba(0, 230, 118, 0.8), 0 0 20px rgba(0, 230, 118, 0.6);
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            animation: fadeInUp 2s ease-in-out forwards, glow 1.5s infinite alternate;
+            text-shadow: 0 0 8px rgba(0, 230, 118, 0.7), 0 0 15px rgba(0, 230, 118, 0.5);
+        }
+
+        #hero .btn {
+            margin-top: 30px;
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.9); /* Light background with slight transparency */
+            color: #000; /* Dark text color for contrast */
+            border: none;
+            border-radius: 50px; /* Rounded button */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s, opacity 0.3s, text-shadow 0.3s;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.7); /* Darker shadow for visibility */
+        }
+
+        #hero .btn:hover {
+            background: rgba(255, 255, 255, 1); /* Fully white on hover */
+            transform: scale(1.05);
+            text-shadow: 0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 123, 255, 0.6);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Glowing Effect */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px rgba(0, 230, 118, 0.8), 0 0 20px rgba(0, 230, 118, 0.6);
+            }
+            100% {
+                text-shadow: 0 0 20px rgba(0, 123, 255, 1), 0 0 30px rgba(0, 123, 255, 0.8); /* Blue glow */
+            }
+        }
+
+        /* Hero Section Background Overlay */
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 0; /* Behind the text */
+        }
+
+        /* Section Padding */
+        section {
+            padding: 60px 0;
+        }
+
+        /* Hover animations for Technologies Section */
+        .technologies-icon:hover {
+            color: #00e676;
+            transform: scale(1.1);
+            transition: 0.3s;
+        }
+
+        /* Project Scope Styles */
+        .project-scope {
+            margin-top: 30px;
+        }
+
+        .project-scope img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .project-scope img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Us Form */
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: #00e676;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #007e4c;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #0a0a23;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Hover animations for Technologies Section */
+        .technologies-icon:hover {
+            color: #00e676;
+            transform: scale(1.1);
+            transition: 0.3s;
+        }
+
+        .technology .avatar {
+          -webkit-box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.25);
+                  box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.25);
+          border-radius: 50%;
+          padding: 25px;
+          width: 150px;
+          height: 150px;
+        }
+
+        .technology .avatar img {
+          -o-object-fit: cover;
+             object-fit: cover;
+          width: 100%;
+        }
+
+        .technology p {
+          color: grey;
+          padding-top: 10px;
+          text-align: center;
+        }
+
+        .milestones {
+            font-size: 1em;
+            font-weight: 300;
+            line-height: 1.5;
+            letter-spacing: 0.05em;
+        }
+        .main-sections .sub-section .downloads-container .card:hover {
+          -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+          -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-sections .sub-section .downloads-container .card-body {
+          padding: 20px;
+        }
+
+        .main-sections .sub-section .downloads-container .list-group-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .main-sections .sub-section .downloads-container .list-group-item a {
+          color: #007bff; /* Bootstrap primary color */
+          text-decoration: none;
+        }
+
+        .main-sections .sub-section .downloads-container .list-group-item a:hover {
+          text-decoration: underline;
+        }
+
+        @media screen and (max-width: 576px) {
+          .main-sections .sub-section .downloads-container .card {
+            height: auto; /* Allow height to adjust for smaller screens */
+          }
+  
+          .main-sections .sub-section .downloads-container .card-body {
+            padding: 15px; /* Adjust padding for smaller screens */
+          }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px rgba(0, 230, 118, 0.8), 0 0 20px rgba(0, 230, 118, 0.6);
+            }
+            100% {
+                text-shadow: 0 0 20px rgba(0, 123, 255, 1), 0 0 30px rgba(0, 123, 255, 0.8); /* Blue glow */
+            }
+        }
+    </style>
+</head>
+
+<body>
+<!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="Vascular Vision Logo" style="height: 40px; margin-right: 10px;">
+                Vascular Vision
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Project Scope
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="projectDropdown">
+                            <a class="dropdown-item" href="#literature-survey">Literature Survey</a>
+                            <a class="dropdown-item" href="#research-gap">Research Gap</a>
+                            <a class="dropdown-item" href="#research-problem">Research Problem & Solution</a>
+                            <a class="dropdown-item" href="#objectives">Research Objectives</a>
+                            <a class="dropdown-item" href="#methodology">Methodology</a>
+                            <a class="dropdown-item" href="#technologies">Technologies</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#milestones">Milestones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div>
+            <h1>Enhanced Cardiovascular Learning</h1>
+            <p>Explore AR and VR experiences designed for medical students.</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <section id="project-scope">
+        <div class="container project-scope">
+            <h2>Project Scope</h2>
+            <h3 id="literature-survey">Literature Survey</h3>
+            <p>
+            The VR Auscultation environment addresses critical issues in medical education by providing students with realistic heart sounds and accurate 3D models of the heart and body. 
+            This integration offers a seamless learning experience that bridges the gap between theory and practice, especially given the complexities of diagnosing cardiac conditions through 
+            auscultation. With limited clinical opportunities, students often lack exposure to a diverse range of cardiac issues, including rare ones, which hampers their ability to apply theoretical 
+            knowledge in practical scenarios. This study aims to connect theoretical understanding with practical implementation in cardiac auscultation, ultimately preparing healthcare professionals 
+            to diagnose cardiac conditions more accurately, leading to improved patient outcomes.
+
+            In cardiology, coronary angiography is essential for detecting coronary artery disease (CAD) and other cardiovascular conditions. Traditional 2D imaging techniques can complicate 
+            interpretation due to their limited perspective. The AR Angiogram program utilizes advanced angiogram data to provide accurate recognition of the heart and blood vessels, creating a 
+            rich learning environment filled with tasks and challenges. By using an AR environment, the program helps students overcome the difficulties associated with interpreting angiograms and 
+            enhances their ability to apply classroom concepts to real-world scenarios. This innovative approach aims to refine medical students' understanding of cardiology, ultimately improving 
+            their diagnostic skills and clinical judgment.
+                </p>
+            <img src="https://via.placeholder.com/600x400" alt="Literature Survey">
+            
+            <h3 id="research-gap">Research Gap</h3>
+            <p>
+                Traditional methods of teaching cardiovascular conditions lack interactive, immersive experiences that simulate real-life diagnoses. Medical students often miss practical experience, which is crucial for learning how to recognize conditions like coronary artery disease and cardiac murmurs.
+            </p>
+            <p>
+                Several key research gaps have been identified in recent studies on ECG diagnostics and the application of AR and VR in medical education:
+            </p>
+            <ul>
+                <li><strong>Real-Time ECG Analysis:</strong> Current solutions for ECG analysis often rely on post-processing techniques, failing to provide real-time feedback and instant diagnostic 
+                results. There is a need for applications that utilize machine learning and image processing algorithms to enable real-time ECG readings and diagnostics.</li>
+                <li><strong>Augmented Reality Integration:</strong> While AR has been applied to map ECG lead placements on patients, its potential for interactive and real-time ECG data interpretation 
+                remains underexplored. Expanding AR applications to overlay diagnostic data on ECG reports could significantly enhance learning experiences for medical students.</li>
+                <li><strong>Training in Complex Procedures:</strong> Existing educational tools for coronary angiography and cardiac auscultation lack comprehensive training components. There is a 
+                shortage of mobile-based AR solutions that focus on detailed training for these intricate procedures, which is essential for effective medical education.</li>
+                <li><strong>Comprehensive VR Solutions:</strong> The integration of VR technology with coronary angiography outputs for educational purposes is limited. Existing research has addressed 
+                either coronary artery visualization software or VR environments for heart conditions but has not effectively combined these elements for enhanced learning.</li>
+                <li><strong>Practical Application in Clinical Settings:</strong> The development of a mobile-based AR application for coronary angiography presents an opportunity to bridge the gap 
+                between theoretical knowledge and practical application in clinical practices, thereby improving patient care and outcomes.</li>
+            </ul>
+
+            <img src="https://via.placeholder.com/600x400" alt="Research Gap">
+
+            <h3 id="research-problem">Research Problem & Solution</h3>
+
+            <h4>The Problem</h4>
+            <p>
+                The challenge we are addressing is the inadequacy of traditional medical education methods in providing realistic cardiovascular diagnostic training. Many medical students find it difficult to connect theoretical knowledge with practical skills due to limited clinical exposure. This often leads to a significant skills gap, especially in interpreting essential diagnostic tools like ECGs and angiograms, which are crucial for accurate diagnosis of complex heart conditions such as coronary artery disease, bradycardia, and tachycardia. 
+            </p>
+
+            <h4>The Solution</h4>
+            <p>
+                Our proposed solution is <strong>VascularVision</strong>, a revolutionary mixed reality teaching and learning environment that combines <strong>Augmented Reality (AR)</strong> and <strong>Virtual Reality (VR)</strong> technologies. VascularVision aims to create <strong>immersive, interactive simulations</strong> that offer students and junior doctors hands-on practice with cardiovascular conditions in a risk-free, virtual setting.
+            </p>
+            <p>
+                In the <strong>VR environment</strong>, students can interact with high-fidelity 3D models of the heart and other cardiovascular structures. They can visualize real-time ECG readings, listen to heart sounds, and manipulate rotatable heart models. This dynamic setup allows students to practice diagnosing heart diseases such as bradycardia, tachycardia, and cardiac murmurs. For instance, students can learn how to place stethoscopes on virtual patients, listen to different heart sounds, and compare these sounds with visual ECG readings, all within a fully simulated environment. By replicating real-life scenarios, this VR solution enhances students' <strong>diagnostic skills</strong> without the risk of harming real patients.
+            </p>
+            <p>
+                The <strong>AR component</strong> further enhances the learning experience by integrating real-time diagnostic tools like ECG and angiogram scans into the environment. AR applications can superimpose 3D models of the heart onto real-world settings, allowing students to use their smartphones or AR devices to scan real ECG data and visualize the corresponding heart conditions in real time. This environment also includes interactive quizzes and machine learning algorithms that assist students in verifying their diagnoses, building their confidence in diagnosing heart conditions and interpreting angiogram results without the need for invasive procedures.
+            </p>
+            <p>
+                The <strong>VR angiogram environment</strong> is particularly useful for teaching coronary angiography, a critical procedure for diagnosing coronary artery diseases. By offering an immersive learning environment that simulates coronary angiograms, students can practice identifying blockages or abnormalities in the coronary arteries with higher accuracy. The simulation provides <strong>interactive feedback</strong> to guide students, helping them to understand how different patterns in angiograms can represent various diagnoses.
+            </p>
+            <p>
+                Overall, VascularVision transforms medical education by bridging the gap between theory and practice. It offers an intuitive, realistic, and engaging way for students to learn, significantly improving their <strong>diagnostic proficiency</strong> and preparing them for real-world clinical challenges. The use of advanced technologies not only makes the learning process more engaging but also ensures that students are better equipped to handle the complexities of cardiovascular diseases in a clinical setting.
+            </p>
+
+            <section id="solutions" class="main-sections">
+                <div class="container">
+                    <h3 class="section-headings">Our Solution</h3>
+                    <div class="image-gallery">
+                        <img src="solution/1.jpg" alt="Research Problem & Solution">
+                        <img src="solution/2.jpg" alt="Research Problem & Solution">
+                        <img src="solution/3.jpg" alt="Research Problem & Solution">
+                        <img src="solution/4.jpg" alt="Research Problem & Solution">
+                        <img src="solution/5.jpg" alt="Research Problem & Solution">
+                    </div>
+                </div>
+            </section>
+
+            <h3 id="objectives">Research Objectives</h3>
+            <p>
+                VR Cardiac Auscultation Environment:
+                Create a virtual reality (VR) environment that allows students to experience and engage with heart rhythms and sounds, especially those associated with diseases like supraventricular 
+                tachycardia (SVT). Students will learn how to recognise cardiovascular diseases based on sound and vibration by simulating real-life auscultation settings in the virtual reality 
+                environment.
+
+                Augmented Reality (AR) Cardiac Auscultation Application:
+                Create an augmented reality tool that simulates heartbeats and provides likely diagnosis ECG reports to assist physicians and students in improving their accuracy while evaluating 
+                cardiac problems using auscultation. By serving as a second source of confirmation for physicians, this tool seeks to increase diagnostic accuracy.
+
+                Virtual Reality (VR) Angiogram Environment:
+                Create a virtual reality environment that mimics coronary angiography so that students can see and examine different artery blockages and associated conditions. By improving 
+                comprehension of angiographic outputs, this seeks to improve diagnostic abilities.
+
+                AR Angiogram Application:
+                Make an augmented reality app that can scan coronary angiography and compare the results to references that have been approved by cardiologists. This helps students and medical 
+                professionals make better decisions by assisting in the identification of problems.
+            </p>
+
+            <h3 id="methodology">Methodology</h3>
+            <p>
+                This research follows a design and development approach to create an Augmented Reality and Virtual Reality Coronary Angiogram Application for medical education. 
+                The process involves expert consultations and iterative development using YOLO-based image detection, AR frameworks like Unity and ARCore, and VR for immersive learning experiences. 
+                Usability testing with medical students and junior doctors will evaluate the app's effectiveness, while cardiologists will validate its accuracy in interpreting ECG and angiogram data.
+                Ethical considerations, including data anonymization and informed consent, will be prioritized throughout the study.
+            </p>
+
+            <div id="technologies" class="sub-section">
+                <h2>Technologies Used</h2>
+                <p>
+                    Our platform utilizes cutting-edge technologies such as Unity for 3D modeling, ARCore for AR functionality, and machine learning for enhanced interactivity and diagnostics.
+                </p>
+                <div class="row technology mt-5">
+                    <div class="col-md-2 col-sm-4 col-6 mb-5">
+                        <div class="avatar">
+                            <img src="./technologies/blender.png" alt="Blender">
+                        </div>
+                        <p>Blender</p>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-6 mb-5">
+                        <div class="avatar">
+                            <img src="./technologies/csharp.png" alt="C#">
+                        </div>
+                        <p>C#</p>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-6 mb-5">
+                        <div class="avatar">
+                            <img src="./technologies/googlear.png" alt="Google AR Services">
+                        </div>
+                        <p>Google AR Services</p>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-6 mb-5">
+                        <div class="avatar">
+                            <img src="./technologies/machinel.png" alt="Machine Learning">
+                        </div>
+                        <p>Machine Learning</p>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-6 mb-5">
+                        <div class="avatar">
+                            <img src="./technologies/openxr.png" alt="Open XR">
+                        </div>
+                        <p>Open XR</p>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-6 mb-5">
+                        <div class="avatar">
+                            <img src="./technologies/python.png" alt="Python">
+                        </div>
+                        <p>Python</p>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-6 mb-5">
+                        <div class="avatar">
+                            <img src="./technologies/unity.png" alt="Unity">
+                        </div>
+                        <p>Unity</p>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-6 mb-5">
+                        <div class="avatar">
+                            <img src="./technologies/vr.png" alt="VR Headset">
+                        </div>
+                        <p>VR Headset</p>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-6 mb-5">
+                        <div class="avatar">
+                            <img src="./technologies/vscode.png" alt="VSCode">
+                        </div>
+                        <p>VSCode</p>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-6 mb-5">
+                        <div class="avatar">
+                            <img src="./technologies/yolo.png" alt="YOLO">
+                        </div>
+                        <p>YOLO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="milestones" class="main-sections">
+        <div class="container">
+            <h5 class="section-headings">Milestones</h5>
+            <div class="sub-section">
+                <h2>Timeline in Brief</h2>
+                <div class="milestones">
+                    <ul class="timeline">
+                        <li class="timeline-event">
+                            
+                            <div class="timeline-event-copy">
+                                <p class="timeline-event-thumbnail">August 2023</p>
+                                <h3>Project Proposal</h3>
+                                <p>A Project Proposal is presented to potential sponsors or clients to receive funding or get your project approved.</p>
+                                <p><strong>Marks Allocated : </strong>6</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 6%" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100">6%</div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="timeline-event">
+                            
+                            <div class="timeline-event-copy">
+                                <p class="timeline-event-thumbnail">November 2023</p>
+                                <h3>Progress Presentation I</h3>
+                                <p>Progress Presentation I reviews the 50% completion status of the project. This reveals any gaps or inconsistencies in the design/requirements.</p>
+                                <p><strong>Marks Allocated : </strong>6</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-infinity-primary" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 6%" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100">6%</div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="timeline-event">
+                            
+                            <div class="timeline-event-copy">
+                                <p class="timeline-event-thumbnail">March 2024</p>
+                                <h3>Research Paper</h3>
+                                <p>Describes what you contribute to existing knowledge, giving due recognition to all work that you referred in making new knowledge.</p>
+                                <p><strong>Marks Allocated : </strong>10</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-infinity-primary" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="timeline-event">
+                            
+                            <div class="timeline-event-copy">
+                                <p class="timeline-event-thumbnail">March 2024</p>
+                                <h3>Progress Presentation II</h3>
+                                <p>Progress Presentation II reviews the 90% completion status demonstration of the project. Along with a Poster presentation which describes the project as a whole.</p>
+                                <p><strong>Marks Allocated : </strong>18</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-infinity-primary" role="progressbar" style="width: 37%" aria-valuenow="37" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 18%" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100">18%</div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="timeline-event">
+                            
+                            <div class="timeline-event-copy">
+                                <p class="timeline-event-thumbnail">June 2024</p>
+                                <h3>Website Assessment</h3>
+                                <p>The Website helps to promote our research project and reveals all details related to the project.</p>
+                                <p><strong>Marks Allocated : </strong>2</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-infinity-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 2%" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100">2%</div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="timeline-event">
+                            
+                            <div class="timeline-event-copy">
+                                <p class="timeline-event-thumbnail">June 2024</p>
+                                <h3>Logbook</h3>
+                                <p>Status of the project is validated through the Logbook. This also includes, Status documents 1 & 2.</p>
+                                <p><strong>Marks Allocated : </strong>3</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-infinity-primary" role="progressbar" style="width: 57%" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 3%" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100">3%</div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="timeline-event">
+                           
+                            <div class="timeline-event-copy">
+                                <p class="timeline-event-thumbnail">July 2024</p>
+                                <h3>Final Report</h3>
+                                <p>Final Report evaluates the completed project done throughout the year. Marks mentioned below includes marks for Individual & group reports and also Final report.</p>
+                                <p><strong>Marks Allocated : </strong>19</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-infinity-primary" role="progressbar" style="width: 61%" aria-valuenow="61" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 19%" aria-valuenow="19" aria-valuemin="0" aria-valuemax="100">19%</div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="timeline-event">
+                            
+                            <div class="timeline-event-copy">
+                                <p class="timeline-event-thumbnail">May 2024</p>
+                                <h3>Final Presentation & Viva</h3>
+                                <p>Viva is held individually to assess each member's contribution to the project.</p>
+                                <p><strong>Marks Allocated : </strong>20</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-infinity-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+      <section id="downloads" class="main-sections" >
+        <div class="container">
+            <h5 class="section-headings">Downloads</h5>
+            
+            <div class="sub-section">
+                <h2>Documents</h2>
+                <p>Please find all documents related to this project below.</p>
+                <div class="row mt-sm-5 downloads-container">
+				 
+                  <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="card" >
+                      <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-file-pdf mr-2 download-pdf"></i>Topic Assessment</h5>
+                        <p class="card-text pt-sm-2">Submitted on 2023/07/10</p>
+                      </div>
+                      <ul class="download-items list-group list-group-flush">
+                        <li class="list-group-item">Group<a href="https://mysliit-my.sharepoint.com/:b:/g/personal/it21038778_my_sliit_lk/EQOZeMpwvIdIpyps2G--fZAB4c7LNh8_sVDUAd29Crck1g?e=XkqTqf" 
+                        target="_blank">Download</a></li>
+                       
+                      </ul>
+
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="card" >
+                      <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-file-pdf mr-2 download-pdf"></i>Project Proposal</h5>
+                        <p class="card-text pt-sm-2">Submitted on 2023/08/25</p>
+                      </div>
+                      <ul class="download-items list-group list-group-flush">
+                        <li class="list-group-item">Individual<a href="https://mysliit-my.sharepoint.com/:f:/g/personal/it21038778_my_sliit_lk/Eh3foww9tZZDqFbN-zKtDtkBDsvvN9ryQ0YLXpv69k2imQ?e=4q0DxE" 
+                        target="_blank">Download</a></li>
+                      </ul>
+
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="card" >
+                      <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-file-pdf mr-2 download-pdf"></i>Status Documents</h5>
+                        <p class="card-text pt-sm-2">Submitted on 2023/11/06</p>
+                      </div>
+                      <ul class="download-items list-group list-group-flush">
+                        
+                        <li class="list-group-item">Individual<a href="https://mysliit-my.sharepoint.com/:f:/g/personal/it21038778_my_sliit_lk/EhJWzuXhdCpEsba3oBrHvjMBTSUsZ0KyzMSyfBY1KUKDoQ?e=rkU1o8" 
+                        target="_blank">Download</a></li>
+                      </ul>
+
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="card" >
+                      <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-file-pdf mr-2 download-pdf"></i>Research Paper</h5>
+                        <p class="card-text pt-sm-2">Submitted on 2024/03/04</p>
+                      </div>
+                      <ul class="download-items list-group list-group-flush">
+                        <li class="list-group-item">Group<a href="https://mysliit-my.sharepoint.com/:f:/g/personal/it21038778_my_sliit_lk/EhSSg8TTWmhOisZpA62f14wBRb2xtx_J3YLEiYi6M7iDEw?e=W61QUx" 
+                        target="_blank">Download</a></li>
+                      </ul>
+
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="card" >
+                      <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-file-pdf mr-2 download-pdf"></i>Final Report</h5>
+                        <p class="card-text pt-sm-2">Submitted on 2024/04/05</p>
+                      </div>
+                       <ul class="download-items list-group list-group-flush">
+                        <li class="list-group-item">Group<a href="https://mysliit-my.sharepoint.com/:f:/g/personal/it21038778_my_sliit_lk/EvNbZ7M6Sk1LqiAnqJUoMaMBkQkYEeXQfvdcheYEk9DgTQ?e=tL3GfL" 
+                        target="_blank">Download</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                 
+                  <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="card" >
+                      <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-file-image mr-2 download-image"></i>Poster</h5>
+                        <p class="card-text pt-sm-2">Yet to be submitted, link will be updated soon.</p>
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    
+<!-- About Us -->
+      <section id="about" class="main-sections " style="background-color:#FDFEFE">
+        <div class="container">
+            <h5 class="section-headings">About Us</h5>
+            <div class="sub-section about-us-container ">
+                <h2>Meet Our Team !</h2>
+                <div class="row  mt-sm-5 ">
+                  <!-- Supervisor -->
+                  <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="card about-us-card">
+                      <img src="img/didulaSir.png" class="about-us-image supervisor" alt="Mr didula chamara" height="20%"/>
+                      <div class="card-body">
+                        <h5 class="card-title">Mr. Didula Chamara 
+                        </h5>
+						</br>
+                        <span class="badge badge-secondary">Supervisor</span>
+                        <div class="text-group">
+                          <p>Sri Lanka Institute of Information Technology</p>
+                        </div>
+                        <div class="text-group">
+                          <p><strong>Department</strong></p>
+                          <p>Software Engineering</p>
+                        </div>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                          
+                          <a class="card-text" style="cursor: pointer;" href="mailto:didula.c@sliit.lk"><i class="fas fa-envelope-open-text mr-2"></i></i>E-Mail</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- Co Supervisor -->
+                  <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="card about-us-card">
+                      <img src="img/profPradeep.png" class="about-us-image cosupervisor" alt="Professor. Pradeep Abeygunawardhana" height="350px"/>
+                      <div class="card-body">
+                        <h5 class="card-title">Professor. Pradeep Abeygunawardhana</h5>
+						</br>
+                        <span class="badge badge-secondary">Co-Supervisor</span>
+                        <div class="text-group">
+                          <p>Sri Lanka Institute of Information Technology</p>
+                        </div>
+                        <div class="text-group">
+                          <p><strong>Department</strong></p>
+                          <p>Information Technology</p>
+                        </div>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+  
+                          <a class="card-text" style="cursor: pointer;" href="mailto:pradeep.a@sliit.lk"><i class="fas fa-envelope-open-text mr-2"></i></i>E-Mail</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+				  <!-- external Supervisor -->
+                  <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="card about-us-card">
+                      <img src="img/ext.png" class="about-us-image cosupervisor" alt="Professor P.B. Terney Pradeep Kumara" height="20%"/>
+                      <div class="card-body">
+                        <h5 class="card-title">Dr. Priyantha Dissanayaka
+                        </h5>
+						</br>
+                        <span class="badge badge-secondary">External-Supervisor</span>
+                        <div class="text-group">
+                          <p>Consultant Cardiologist - NHK, Asiri Hospital </p>
+                        </div>
+                        <div class="text-group">
+                          <p><strong>Department</strong></p>
+                          <p>Cardiology</p>
+
+                        </div>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                          <a class="card-text" style="cursor: pointer;" href="mailto:"><i class="fas fa-envelope-open-text mr-2"></i></i>E-Mail</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+				  </div>
+				  <div class="row  mt-sm-5" style="justify-content: center">
+                  <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="card about-us-card">
+                      <img src="img/harsith.png" class="about-us-image " alt="Nissanka" height="300px"/>
+                        <div class="card-body">
+                        <h5 class="card-title">Nissanka N.M.H.H.</h5>
+						</br>
+                        <span class="badge badge-secondary">Group Leader</span>
+                        <div class="text-group">
+						<p><strong>Undergraduate</strong></p>
+                          <p>Sri Lanka Institute of Information Technology</p>
+                        </div>
+                        <div class="text-group">
+                        <p><strong>Department</strong></p>
+                          <p>Information Technology</p>
+                        </div>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+					
+                          <a class="card-text" style="cursor: pointer;" href="mailto:harsithnissanka@yahoo.com"><i class="fas fa-envelope-open-text mr-2"></i></i>E-Mail</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                   <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="card about-us-card">
+                      <img src="img/jude.jpg" class="about-us-image" alt="Rajarathne" height="350px"/>
+                        <div class="card-body">
+                        <h5 class="card-title">Rajarathne J.K</h5>
+						</br>
+                        <span class="badge badge-secondary">Group Member</span>
+                        <div class="text-group">
+						<p><strong>Undergraduate</strong></p>
+                          <p>Sri Lanka Institute of Information Technology</p>
+                        </div>
+                        <div class="text-group">
+                        <p><strong>Department</strong></p>
+                          <p>Information Technology</p>
+                        </div>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+	
+                          <a class="card-text" style="cursor: pointer;" href="mailto:juderajarathne@gmail.com"><i class="fas fa-envelope-open-text mr-2"></i></i>E-Mail</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="card about-us-card">
+                      <img src="img/sajini.jpg" class="about-us-image" alt="Wijayasundara" height="410px"/>
+                        <div class="card-body">
+                        <h5 class="card-title">Wijayasundara S.S</h5>
+						</br>
+                        <span class="badge badge-secondary">Group Member</span>
+                        <div class="text-group">
+						<p><strong>Undergraduate</strong></p>
+                          <p>Sri Lanka Institute of Information Technology</p>
+                        </div>
+                        <div class="text-group">
+                        <p><strong>Department</strong></p>
+                          <p>Information Technology</p>
+                        </div>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+					
+                          <a class="card-text" style="cursor: pointer;" href="mailto:sajiniwijayasundara@gmail.com"><i class="fas fa-envelope-open-text mr-2"></i></i>E-Mail</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                    <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="card about-us-card">
+                      <img src="img/sahan.png" class="about-us-image" alt="Vidanagamage" height="300px"/>
+                        <div class="card-body">
+                        <h5 class="card-title">Vidanagamage S.T</h5>
+						</br>
+                        <span class="badge badge-secondary">Group Member</span>
+                        <div class="text-group">
+						<p><strong>Undergraduate</strong></p>
+                          <p>Sri Lanka Institute of Information Technology</p>
+                        </div>
+                        <div class="text-group">
+                        <p><strong>Department</strong></p>
+                          <p>Information Technology</p>
+                        </div>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+	
+                          <a class="card-text" style="cursor: pointer;" href="mailto:sahanthiloshana496@gmail.com"><i class="fas fa-envelope-open-text mr-2"></i></i>E-Mail</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+				  </div>
+            </div>
+        </div>
+      </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    
+    <footer>
+        <p>&copy; 2024 Vascular Vision. All Rights Reserved.</p>
+    </footer>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
